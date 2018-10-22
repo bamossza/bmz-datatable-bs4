@@ -16,6 +16,26 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "bmz-datepicker": [
+        "dist/bmz-datepicker"
+      ],
+      "bmz-datepicker/*": [
+        "dist/bmz-datepicker/*"
+      ],
+      "bmz-utils": [
+        "dist/bmz-utils"
+      ],
+      "bmz-utils/*": [
+        "dist/bmz-utils/*"
+      ],
+      "bmz-datatable-bs4": [
+        "dist/bmz-datatable-bs4"
+      ],
+      "bmz-datatable-bs4/*": [
+        "dist/bmz-datatable-bs4/*"
+      ]
+    }
   }
 }
