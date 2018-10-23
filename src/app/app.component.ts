@@ -1,11 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+
+declare var $: any;
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+
+export class AppComponent implements OnInit, AfterViewInit {
 
     title = 'bamossza-datatable';
 
@@ -14,7 +17,7 @@ export class AppComponent implements OnInit {
         // $(document).ready(function () {
         //
         //
-        //     $('#example-2').DataTable();
+
         // });
 
         // console.log('getDeviceName ==> ', utils.getDeviceName());
@@ -30,5 +33,23 @@ export class AppComponent implements OnInit {
         // console.log('uuidv4 ==> ', utils.uuidv4());
         // console.log('mergeArray ==> ', utils.mergeArray([{a: '1234'}, {b: '4321'}], [{b: '567'}, {b: '765'}]));
         // console.log('sumValueArray ==> ', utils.sumValueArray([1, 2, 3]));
+    }
+
+    ngAfterViewInit(): void {
+
+        // $('#examplexxx').DataTable({
+        //     scrollY: "300px",
+        //     scrollX: true,
+        //     scrollCollapse: true,
+        //     paging: false,
+        //     fixedColumns: true
+        // });
+        //
+        // $('#exampleXxx2').DataTable( {
+        //     order: [[1, 'asc']],
+        //     rowGroup: {
+        //         dataSrc: 2
+        //     }
+        // });
     }
 }
