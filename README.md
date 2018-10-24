@@ -113,12 +113,13 @@ const columns = [
 | :---          |     :---:                 |   :---:  |
 | id (Required) | string                    |         |
 | class         | string                    |         |
-| groupColumn   | number                    |         |
+| groupColumn   | number (Start 1) or string                   |         |
+| hideColumn        | number (Start 1)      |     |
 | fixedHeader   | boolean                   | false   |
 | fixedHeaderOffset   | number                   | 0   |
 | fixedColumn   | boolean                   | false   |
-| fixedColumnLeft   | number                   | 0   |
-| fixedColumnRight   | number                   | 0   |
+| fixedColumnLeft   | number (Start 1)                   | 0   |
+| fixedColumnRight   | number (Start 1)                   | 0   |
 | searching     | boolean                   | true    |
 | paging        | boolean                   | true    |
 | order         | Array<[number, string]>   | [[0, 'asc']] |

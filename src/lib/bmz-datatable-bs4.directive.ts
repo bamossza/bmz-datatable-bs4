@@ -18,7 +18,8 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestro
     private fixedHeaderObj: boolean | {} = false;
     @Input() private searching = true;
     @Input() private paging = true;
-    @Input() private groupColumn: boolean | number = false;
+    @Input() private groupColumn: boolean | number | string = false;
+    @Input() private hideColumn: boolean | number = false;
     private rowGroupObj: boolean | {} = false;
     private columnDefsObj: boolean | Array<any> = false;
     @Input() private order: Array<[number, string]> = [[0, 'asc']];
@@ -58,10 +59,11 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestro
             this.rowGroupObj = {
                 dataSrc: this.groupColumn
             };
-            this.columnDefsObj = [
-                {'visible': false, 'targets': this.groupColumn}
-            ];
         }
+
+        this.columnDefsObj = [
+            {'visible': false, 'targets': typeof this.hideColumn === 'number' ? this.hideColumn - 1 : this.hideColumn}
+        ];
 
         if (this.fixedColumn) {
             this.scrollY = '300px';

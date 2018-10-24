@@ -1,5 +1,18 @@
 ## Changelog
 
+<a name="1.0.7"></a>
+# 1.0.7 (2018-10-24)
+
+## Feature
+- **hideColumn:** prevent default false, Use to hide columns.
+
+## Bug Fixes
+- **groupColumn:** Can be get parameter string | number
+
+Using string when data is an Ajax / Object.
+
+Using number when data is a DOM / Array sourced data.
+
 <a name="1.0.6"></a>
 # 1.0.6 (2018-10-24)
 
