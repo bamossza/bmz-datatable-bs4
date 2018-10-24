@@ -1,8 +1,8 @@
 # Bamossza Datatable Bootstrap 4
 
-![alt bmz-logo](https://tool.bamossza.com/assets/images/logo/m32_.png)
+Angular Datatable Bootstrap 4
 
-Angular Datatable bootstrap 4 
+![alt bmz-logo](https://tool.bamossza.com/assets/images/logo/m32_.png)
 
 support angular 6 or above for developer.
 
