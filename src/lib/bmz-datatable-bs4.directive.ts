@@ -1,12 +1,16 @@
-import {AfterViewInit, Directive, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Directive, Input, OnDestroy, OnInit} from '@angular/core';
+import {Subject, Subscription} from 'rxjs';
 
 declare var $: any;
 
 @Directive({
     selector: '[bmzDatatableBs4]'
 })
-export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
+export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestroy {
 
+    private _rows = new Subject<any>();
+    private subscription: Subscription;
+    @Input() private columns: Array<{ data: string, class: string }> = [];
     @Input() private id = '';
     @Input() private class = '';
     @Input() private fixedHeader = false;
@@ -23,12 +27,20 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
     @Input() private scrollX = false;
     @Input() private scrollCollapse = false;
     @Input() private fixedColumn = false;
+    @Input() private fixedColumnLeft = 0;
+    @Input() private fixedColumnRight = 0;
+    private fixedColumnObj: boolean | {} = false;
 
     constructor() {
     }
 
     ngOnInit() {
 
+    }
+
+    @Input('rows')
+    set rows(value) {
+        this._rows.next(value);
     }
 
     ngAfterViewInit(): void {
@@ -55,6 +67,10 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
             this.scrollY = '300px';
             this.scrollX = true;
             this.scrollCollapse = true;
+            this.fixedColumnObj = {
+                leftColumns: this.fixedColumnLeft,
+                rightColumns: this.fixedColumnRight
+            };
         }
 
         if (this.fixedHeader) {
@@ -70,17 +86,23 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
             order: this.order,
             rowGroup: this.rowGroupObj,
             columnDefs: this.columnDefsObj,
-            fixedColumns: this.fixedColumn,
+            fixedColumns: this.fixedColumnObj,
             scrollX: this.scrollX,
             scrollY: this.scrollY,
-            scrollCollapse: this.scrollCollapse
+            scrollCollapse: this.scrollCollapse,
+            data: [],
+            columns: this.columns
         };
 
-        $('#' + this.id).DataTable(opt);
+        this.subscription = this._rows
+            .subscribe(r => {
+                opt.data = r;
+                $('table#' + this.id).DataTable(opt);
+            });
+    }
 
-        setTimeout(() => {
-            $('#' + this.id).DataTable().draw();
-        }, 10);
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 
 }

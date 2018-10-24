@@ -61,25 +61,50 @@ Look up Script[] add below.
 
 ```
 
+Bmz Lib is an auto create table body, following below.
+
 Attr >> bmzDatatableBs4
+
+const rows = [
+{
+    order: 1,
+    orderName: 'Coffee'
+},
+{
+    order: 2,
+    orderName: 'Tea'
+}];
+
+-------------------------
+
+const columns = [
+{
+    data: 'order',
+    class: 'text-center'
+},
+{
+    data: 'orderName'
+}];
+
+-------------------------
 
 <table bmzDatatableBs4
     [fixedColumn]="true"
-    [paging]="false"
-    id="table-fixed-header-x"
+    [fixedColumnLeft]="2"
+    [rows]="rows"
+    [columns]="columns"
+    id="table-fixed-columns"
     class="table table-striped table-bordered"
     style="width:100%">
     <thead>
         <tr>
-            <th></th>
+            <th>Order</th>
+            <th>Order Name</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <td></td>
-        </tr>
-    </tbody>
+    <tbody></tbody>
 </table>
+
 ```
 
 ## Attribute can used
@@ -92,12 +117,16 @@ Attr >> bmzDatatableBs4
 | fixedHeader   | boolean                   | false   |
 | fixedHeaderOffset   | number                   | 0   |
 | fixedColumn   | boolean                   | false   |
+| fixedColumnLeft   | number                   | 0   |
+| fixedColumnRight   | number                   | 0   |
 | searching     | boolean                   | true    |
 | paging        | boolean                   | true    |
 | order         | Array<[number, string]>   | [[0, 'asc']] |
 | scrollX       | boolean                   | false   |
 | scrollY       | string                    | 300px   |
 | scrollCollapse | boolean                  | false   |
+| rows          | Array<Object>                  | []   |
+| columns       | Array<[data: string, class: string]>  | []   |
 
 ## Example
 
