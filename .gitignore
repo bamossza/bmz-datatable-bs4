@@ -37,6 +37,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-bmz-common-lib/node_modules/
-projects/bmz-datatable-bs4/node_modules/
-projects/bmz-datepicker/node_modules/

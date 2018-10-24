@@ -100,25 +100,31 @@ Attr >> bmzDatatableBs4
 
 ## Example
 
-Fixed Header when down ↓ scrollbar 
+##### Fixed Header when down ↓ scrollbar 
 
 ![alt bmz-logo](https://bamossza.com/static/images/exam-ng-datatable-bs4-1.png)
 
-Row Group
+##### Row Group
 
 ![alt bmz-logo](https://bamossza.com/static/images/exam-ng-datatable-bs4.png)
+
+## Changelog
+
+[Learn about the latest improvements.](https://github.com/bamossza/bmz-datatable-bs4/blob/master/CHANGELOG.md)
 
 ## Authors
 
 * **[Panusitt Khuenkham](https://github.com/bamossza)**
 
-##Profiles
+## Further information
+
+* [Angular docs](https://angular.io)
+* [jQuery](https://jquery.com/)
+* [Datatables](https://datatables.net)
+
+## Profiles
 
 * [Bamossza Website](https://bamossza.com)
 * [Tool for Developer](https://tool.bamossza.com)
 * [Blog Medium](https://medium.com/@bamossza)
 * [Stack Overflow](https://stackoverflow.com/users/3863070/bamossza)
-
-## License
-
-MIT License
