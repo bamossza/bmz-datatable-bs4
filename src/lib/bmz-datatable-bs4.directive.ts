@@ -11,12 +11,12 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
     @Input() private class = '';
     @Input() private fixedHeader = false;
     @Input() private fixedHeaderOffset = 0;
-    @Input() private fixedHeaderObj: boolean | {} = false;
+    private fixedHeaderObj: boolean | {} = false;
     @Input() private searching = true;
     @Input() private paging = true;
     @Input() private groupColumn: boolean | number = false;
-    @Input() private rowGroupObj: boolean | {} = false;
-    @Input() private columnDefsObj: boolean | Array<any> = false;
+    private rowGroupObj: boolean | {} = false;
+    private columnDefsObj: boolean | Array<any> = false;
     @Input() private order: Array<[number, string]> = [[0, 'asc']];
 
     @Input() private scrollY: boolean | string = false;
