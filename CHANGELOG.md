@@ -108,6 +108,11 @@ Row Group
 
 ![alt bmz-logo](https://bamossza.com/static/images/exam-ng-datatable-bs4.png)
 
+## Changelog
+
+[Learn about the latest improvements](https://github.com/bamossza/bmz-datatable-bs4/blob/master/CHANGELOG.md)
+
+
 ## Authors
 
 * **[Panusitt Khuenkham](https://github.com/bamossza)**
@@ -119,6 +124,8 @@ Row Group
 * [Blog Medium](https://medium.com/@bamossza)
 * [Stack Overflow](https://stackoverflow.com/users/3863070/bamossza)
 
-## License
+## Further information
 
-MIT License
+* **[jQuery](https://jquery.com)**
+* **[Angular Docs](https://angular.io)**
+* **[Datatables](https://datatables.net)**
