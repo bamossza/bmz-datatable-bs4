@@ -3,24 +3,26 @@ import {AfterViewInit, Directive, Input, OnInit} from '@angular/core';
 declare var $: any;
 
 @Directive({
-    selector: 'table[bmzDatatableBs4]'
+    selector: '[bmzDatatableBs4]'
 })
 export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
 
-    @Input() private id: string = '';
-    @Input() private class: string = '';
-    @Input() private fixedHeader: boolean = false;
-    @Input() private searching: boolean = true;
-    @Input() private paging: boolean = true;
+    @Input() private id = '';
+    @Input() private class = '';
+    @Input() private fixedHeader = false;
+    @Input() private fixedHeaderOffset = 0;
+    @Input() private fixedHeaderObj: boolean | {} = false;
+    @Input() private searching = true;
+    @Input() private paging = true;
     @Input() private groupColumn: boolean | number = false;
     @Input() private rowGroupObj: boolean | {} = false;
     @Input() private columnDefsObj: boolean | Array<any> = false;
     @Input() private order: Array<[number, string]> = [[0, 'asc']];
 
     @Input() private scrollY: boolean | string = false;
-    @Input() private scrollX: boolean = false;
-    @Input() private scrollCollapse: boolean = false;
-    @Input() private fixedColumn: boolean = false;
+    @Input() private scrollX = false;
+    @Input() private scrollCollapse = false;
+    @Input() private fixedColumn = false;
 
     constructor() {
     }
@@ -45,18 +47,24 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
                 dataSrc: this.groupColumn
             };
             this.columnDefsObj = [
-                {"visible": false, "targets": this.groupColumn}
+                {'visible': false, 'targets': this.groupColumn}
             ];
         }
 
-        if(this.fixedColumn){
+        if (this.fixedColumn) {
             this.scrollY = '300px';
             this.scrollX = true;
             this.scrollCollapse = true;
         }
 
+        if (this.fixedHeader) {
+            this.fixedHeaderObj = {
+                headerOffset: this.fixedHeaderOffset
+            };
+        }
+
         const opt = {
-            fixedHeader: this.fixedHeader,
+            fixedHeader: this.fixedHeaderObj,
             searching: this.searching,
             paging: this.paging,
             order: this.order,
@@ -67,8 +75,6 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit {
             scrollY: this.scrollY,
             scrollCollapse: this.scrollCollapse
         };
-
-        console.log(opt);
 
         $('#' + this.id).DataTable(opt);
 

@@ -90,6 +90,7 @@ Attr >> bmzDatatableBs4
 | class         | string                    |         |
 | groupColumn   | number                    |         |
 | fixedHeader   | boolean                   | false   |
+| fixedHeaderOffset   | number                   | 0   |
 | fixedColumn   | boolean                   | false   |
 | searching     | boolean                   | true    |
 | paging        | boolean                   | true    |
