@@ -122,7 +122,8 @@ const columns = [
 | fixedColumnRight   | number (Start 1)                   | 0   |
 | searching     | boolean                   | true    |
 | paging        | boolean                   | true    |
-| order         | Array<[number, string]>   | [[0, 'asc']] |
+| order         | Array<[number, string]> (Start 0)  | [[0, 'asc']] |
+| orderFixed    | Array<[number, string]> (Start 0)  | false |
 | scrollX       | boolean                   | false   |
 | scrollY       | string                    | 300px   |
 | scrollCollapse | boolean                  | false   |

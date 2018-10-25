@@ -23,7 +23,7 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestro
     private rowGroupObj: boolean | {} = false;
     private columnDefsObj: boolean | Array<any> = false;
     @Input() private order: Array<[number, string]> = [[0, 'asc']];
-
+    @Input() private orderFixed: Array<[number, string]> | false = false;
     @Input() private scrollY: boolean | string = false;
     @Input() private scrollX = false;
     @Input() private scrollCollapse = false;
@@ -86,6 +86,7 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestro
             searching: this.searching,
             paging: this.paging,
             order: this.order,
+            orderFixed: this.orderFixed,
             rowGroup: this.rowGroupObj,
             columnDefs: this.columnDefsObj,
             fixedColumns: this.fixedColumnObj,

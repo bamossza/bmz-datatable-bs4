@@ -1,5 +1,14 @@
 ## Changelog
 
+<a name="1.0.8"></a>
+# 1.0.8 (2018-10-25)
+
+## Feature
+- **orderFixed:** prevent default false, Using with Row group for Fixed order.
+
+e.g. [orderFixed]="[['1', 'asc']]" (Start 0)
+
+
 <a name="1.0.7"></a>
 # 1.0.7 (2018-10-24)
 
