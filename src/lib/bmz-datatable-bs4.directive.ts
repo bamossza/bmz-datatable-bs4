@@ -82,7 +82,6 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestro
         }
 
         const opt = {
-            select: 'single',
             fixedHeader: this.fixedHeaderObj,
             searching: this.searching,
             paging: this.paging,
@@ -102,41 +101,8 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestro
         this.subscription = this._rows
             .subscribe(r => {
                 opt.data = r;
-                const table = $('table#' + this.id).DataTable(opt);
-
-                $('table#' + this.id + ' tbody').on('click', 'td.details-control', function () {
-                    let tr = $(this).closest('tr');
-                    let row = table.row(tr);
-
-                    if (row.child.isShown()) {
-                        // This row is already open - close it
-                        row.child.hide();
-                        tr.removeClass('shown');
-                    } else {
-                        // Open this row
-                        row.child(this.format(opt.data)).show();
-                        tr.addClass('shown');
-                    }
-                });
+                $('table#' + this.id).DataTable(opt);
             });
-    }
-
-    format(d) {
-        // `d` is the original data object for the row
-        return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
-            '<tr>' +
-            '<td>Full name:</td>' +
-            '<td>' + '' + '</td>' +
-            '</tr>' +
-            '<tr>' +
-            '<td>Extension number:</td>' +
-            '<td>' + '' + '</td>' +
-            '</tr>' +
-            '<tr>' +
-            '<td>Extra info:</td>' +
-            '<td>And any further details here (images etc)...</td>' +
-            '</tr>' +
-            '</table>';
     }
 
     ngOnDestroy() {
