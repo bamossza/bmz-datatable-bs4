@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import "~datatables.net-bs4/css/dataTables.bootstrap4.min.css";
 @import "~datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.min.css";
 @import "~datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css";
+
+td.details-control {
+    background: url('../../../../src/assets/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+
+tr.shown td.details-control {
+    background: url('../../../../src/assets/details_close.png') no-repeat center center;
+}

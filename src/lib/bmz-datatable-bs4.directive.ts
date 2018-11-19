@@ -94,7 +94,8 @@ export class BmzDatatableBs4Directive implements OnInit, AfterViewInit, OnDestro
             scrollY: this.scrollY,
             scrollCollapse: this.scrollCollapse,
             data: [],
-            columns: this.columns
+            columns: this.columns,
+            destroy: true
         };
 
         this.subscription = this._rows
